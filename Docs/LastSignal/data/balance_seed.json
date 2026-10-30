@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "status": "Untested design seeds, not an Unreal-ready import format",
+  "units": {
+    "distance": "metres",
+    "speed": "km/h",
+    "mass": "kg",
+    "fuel": "abstract game units; not litres"
+  },
+  "run": {
+    "failure_scrap_retention": 0.3,
+    "failure_material_retention": 0,
+    "critical_clues_persist": true,
+    "free_departure_fuel": true,
+    "free_basic_repair": true,
+    "scrap_per_forward_km": 55,
+    "checkpoint_scrap_bonus": 40,
+    "scrap_per_enemy": 2,
+    "enemy_scrap_cap_per_leg": 50,
+    "cargo_stack_size": 10
+  },
+  "streaming": {
+    "nominal_chunk_m": 250,
+    "ahead": 5,
+    "behind": 2,
+    "max_clingers": 4,
+    "active_enemy_budget": 24,
+    "ragdoll_budget": 8,
+    "dynamic_debris_budget": 12
+  },
+  "fuel_model": {
+    "distance_cost": "(forward_or_reverse_travel_m / (nominal_range_km * 1000)) * stock_capacity * load_factor * boost_factor",
+    "load_factor": "clamp(1 + 0.10 * (current_mass / stock_mass - 1), 0.90, 1.30)",
+    "boost_factor_when_active": 1.7,
+    "boost_factor_otherwise": 1,
+    "idle_units_per_second": 0.003,
+    "fuel_pickup_units": 5,
+    "note": "Wheel travel burns fuel but route progress is separately monotonic. Nominal range assumes stock mass, no boost and excludes idle. Fuel capacity upgrades extend range; do not recompute distance cost from upgraded capacity. Guarantee a pickup before an otherwise marginal next leg."
+  },
+  "vehicles": [
+    {
+      "id": "V01",
+      "name": "Kestrel",
+      "family": "K",
+      "stock_mass_kg": 1280,
+      "speed_cap_kmh": 110,
+      "fuel_capacity": 18,
+      "nominal_range_km": 4.5,
+      "cargo_slots": 8,
+      "body_integrity": 100,
+      "wheel_radius_m": 0.31,
+      "stock_stability_scalar": 0.65,
+      "stock_ram_rating": 10,
+      "slots": [
+        "Engine",
+        "Fuel",
+        "Suspension",
+        "Ram",
+        "Utility",
+        "Wheel_FL",
+        "Wheel_FR",
+        "Wheel_RL",
+        "Wheel_RR"
+      ],
+      "free_checkpoint": "CP00"
+    },
+    {
+      "id": "V02",
+      "name": "Mule",
+      "family": "M",
+      "stock_mass_kg": 1880,
+      "speed_cap_kmh": 100,
+      "fuel_capacity": 24,
+      "nominal_range_km": 6.0,
+      "cargo_slots": 12,
+      "body_integrity": 150,
+      "wheel_radius_m": 0.37,
+      "stock_stability_scalar": 0.65,
+      "stock_ram_rating": 20,
+      "slots": [
+        "Engine",
+        "Fuel",
+        "Suspension",
+        "Ram",
+        "Utility",
+        "Wheel_FL",
+        "Wheel_FR",
+        "Wheel_RL",
+        "Wheel_RR"
+      ],
+      "free_checkpoint": "CP12"
+    },
+    {
+      "id": "V03",
+      "name": "Warden",
+      "family": "W",
+      "stock_mass_kg": 2850,
+      "speed_cap_kmh": 90,
+      "fuel_capacity": 30,
+      "nominal_range_km": 6.5,
+      "cargo_slots": 16,
+      "body_integrity": 210,
+      "wheel_radius_m": 0.42,
+      "stock_stability_scalar": 0.65,
+      "stock_ram_rating": 30,
+      "slots": [
+        "Engine",
+        "Fuel",
+        "Suspension",
+        "Ram",
+        "Utility",
+        "Wheel_FL",
+        "Wheel_FR",
+        "Wheel_RL",
+        "Wheel_RR"
+      ],
+      "free_checkpoint": "CP30"
+    }
+  ],
+  "parts": [
+    {
+      "id": "P_K_TYRE_T1",
+      "slot": "TYRE",
+      "compatible_vehicles": [
+        "V01"
+      ],
+      "scrap": 120,
+      "materials": {
+        "Rubber": 2
+      },
+      "effects": {
+        "dry_grip_mult": 1.08
+      },
+      "price_unit": "one wheel",
+      "unlock_checkpoint": "CP00",
+      "wheel_radius_m": 0.31
+    },
+    {
+      "id": "P_K_ENGINE_T1",
+      "slot": "ENGINE",
+      "compatible_vehicles": [
+        "V01"
+      ],
+      "scrap": 260,
+      "materials": {
+        "Alloy": 2,
+        "Electronics": 1
+      },
+      "effects": {
+        "engine_force_mult": 1.12
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP00",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_K_FUEL_T1",
+      "slot": "FUEL",
+      "compatible_vehicles": [
+        "V01"
+      ],
+      "scrap": 220,
+      "materials": {
+        "Alloy": 2
+      },
+      "effects": {
+        "fuel_capacity_mult": 1.25
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP00",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_K_RAM_T1",
+      "slot": "RAM",
+      "compatible_vehicles": [
+        "V01"
+      ],
+      "scrap": 200,
+      "materials": {
+        "Alloy": 2
+      },
+      "effects": {
+        "ram_rating_add": 20,
+        "mass_kg_add": 45
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP00",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_K_SUSP_T1",
+      "slot": "SUSP",
+      "compatible_vehicles": [
+        "V01"
+      ],
+      "scrap": 280,
+      "materials": {
+        "Alloy": 2
+      },
+      "effects": {
+        "stability_mult": 1.1,
+        "mass_kg_add": 10
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP00",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_K_UTIL_T1",
+      "slot": "UTIL",
+      "compatible_vehicles": [
+        "V01"
+      ],
+      "scrap": 240,
+      "materials": {
+        "Alloy": 2,
+        "Electronics": 1
+      },
+      "effects": {
+        "cargo_slots_add": 4,
+        "mass_kg_add": 20
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP00",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_M_TYRE_T1",
+      "slot": "TYRE",
+      "compatible_vehicles": [
+        "V02"
+      ],
+      "scrap": 280,
+      "materials": {
+        "Rubber": 3
+      },
+      "effects": {
+        "wet_grip_mult": 1.18
+      },
+      "price_unit": "one wheel",
+      "unlock_checkpoint": "CP12",
+      "wheel_radius_m": 0.37
+    },
+    {
+      "id": "P_M_ENGINE_T1",
+      "slot": "ENGINE",
+      "compatible_vehicles": [
+        "V02"
+      ],
+      "scrap": 520,
+      "materials": {
+        "Alloy": 4,
+        "Electronics": 2
+      },
+      "effects": {
+        "engine_force_mult": 1.15
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP12",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_M_FUEL_T1",
+      "slot": "FUEL",
+      "compatible_vehicles": [
+        "V02"
+      ],
+      "scrap": 480,
+      "materials": {
+        "Alloy": 4
+      },
+      "effects": {
+        "fuel_capacity_mult": 1.3
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP12",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_M_RAM_T1",
+      "slot": "RAM",
+      "compatible_vehicles": [
+        "V02"
+      ],
+      "scrap": 600,
+      "materials": {
+        "Alloy": 4
+      },
+      "effects": {
+        "ram_rating_add": 35,
+        "mass_kg_add": 100
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP12",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_M_SUSP_T1",
+      "slot": "SUSP",
+      "compatible_vehicles": [
+        "V02"
+      ],
+      "scrap": 520,
+      "materials": {
+        "Alloy": 4
+      },
+      "effects": {
+        "stability_mult": 1.15,
+        "mass_kg_add": 25
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP12",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_M_UTIL_T1",
+      "slot": "UTIL",
+      "compatible_vehicles": [
+        "V02"
+      ],
+      "scrap": 650,
+      "materials": {
+        "Alloy": 4,
+        "Electronics": 2
+      },
+      "effects": {
+        "fuel_pickup_yield_mult": 1.2,
+        "mass_kg_add": 35
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP12",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_W_TYRE_T1",
+      "slot": "TYRE",
+      "compatible_vehicles": [
+        "V03"
+      ],
+      "scrap": 450,
+      "materials": {
+        "Rubber": 4
+      },
+      "effects": {
+        "tyre_durability_mult": 1.2
+      },
+      "price_unit": "one wheel",
+      "unlock_checkpoint": "CP30",
+      "wheel_radius_m": 0.42
+    },
+    {
+      "id": "P_W_ENGINE_T1",
+      "slot": "ENGINE",
+      "compatible_vehicles": [
+        "V03"
+      ],
+      "scrap": 1050,
+      "materials": {
+        "Alloy": 6,
+        "Electronics": 3
+      },
+      "effects": {
+        "engine_force_mult": 1.18
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP30",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_W_FUEL_T1",
+      "slot": "FUEL",
+      "compatible_vehicles": [
+        "V03"
+      ],
+      "scrap": 950,
+      "materials": {
+        "Alloy": 6
+      },
+      "effects": {
+        "fuel_capacity_mult": 1.25
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP30",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_W_RAM_T1",
+      "slot": "RAM",
+      "compatible_vehicles": [
+        "V03"
+      ],
+      "scrap": 1200,
+      "materials": {
+        "Alloy": 6
+      },
+      "effects": {
+        "ram_rating_add": 50,
+        "mass_kg_add": 180
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP30",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_W_SUSP_T1",
+      "slot": "SUSP",
+      "compatible_vehicles": [
+        "V03"
+      ],
+      "scrap": 900,
+      "materials": {
+        "Alloy": 6
+      },
+      "effects": {
+        "stability_mult": 1.18,
+        "mass_kg_add": 45
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP30",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_W_UTIL_T1",
+      "slot": "UTIL",
+      "compatible_vehicles": [
+        "V03"
+      ],
+      "scrap": 1100,
+      "materials": {
+        "Alloy": 6,
+        "Electronics": 3
+      },
+      "effects": {
+        "cargo_slots_add": 6,
+        "mass_kg_add": 65
+      },
+      "price_unit": "one module",
+      "unlock_checkpoint": "CP30",
+      "wheel_radius_m": null
+    },
+    {
+      "id": "P_COMMON_ECONOMY",
+      "slot": "ENGINE",
+      "compatible_vehicles": [
+        "V01",
+        "V02",
+        "V03"
+      ],
+      "scrap": 700,
+      "materials": {
+        "Alloy": 4,
+        "Electronics": 2
+      },
+      "effects": {
+        "nominal_range_mult": 1.12,
+        "engine_force_mult": 0.92
+      },
+      "unlock_checkpoint": "CP24",
+      "note": "Alternative slot part, not additive extra socket; preview replacement losses."
+    },
+    {
+      "id": "P_COMMON_SHELL",
+      "slot": "RAM",
+      "compatible_vehicles": [
+        "V01",
+        "V02",
+        "V03"
+      ],
+      "scrap": 800,
+      "materials": {
+        "Alloy": 4,
+        "Electronics": 2
+      },
+      "effects": {
+        "body_integrity_mult": 1.2,
+        "mass_mult": 1.08
+      },
+      "unlock_checkpoint": "CP24",
+      "note": "Alternative slot part, not additive extra socket; preview replacement losses."
+    },
+    {
+      "id": "P_COMMON_STEERING",
+      "slot": "SUSP",
+      "compatible_vehicles": [
+        "V01",
+        "V02",
+        "V03"
+      ],
+      "scrap": 900,
+      "materials": {
+        "Alloy": 4,
+        "Electronics": 2
+      },
+      "effects": {
+        "steering_response_mult": 1.1,
+        "high_speed_assist_mult": 0.9
+      },
+      "unlock_checkpoint": "CP24",
+      "note": "Alternative slot part, not additive extra socket; preview replacement losses."
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP00",
+      "route_m": 0,
+      "garage": "G01",
+      "free_vehicle": "V01",
+      "clue": "C01_MAP",
+      "grant_id": "GRANT_CP00_V1",
+      "refill": true,
+      "free_parts": [
+        "P_K_TYRE_T1"
+      ]
+    },
+    {
+      "id": "CP04",
+      "route_m": 4000,
+      "garage": null,
+      "free_vehicle": null,
+      "clue": "C02_LOG",
+      "grant_id": "GRANT_CP04_V1",
+      "refill": true,
+      "free_parts": []
+    },
+    {
+      "id": "CP08",
+      "route_m": 8000,
+      "garage": null,
+      "free_vehicle": null,
+      "clue": "C03_TOKEN",
+      "grant_id": "GRANT_CP08_V1",
+      "refill": true,
+      "free_parts": [
+        "P_K_TYRE_T1"
+      ]
+    },
+    {
+      "id": "CP12",
+      "route_m": 12000,
+      "garage": "G02",
+      "free_vehicle": "V02",
+      "clue": "C04_LEDGER",
+      "grant_id": "GRANT_CP12_V1",
+      "refill": true,
+      "free_parts": []
+    },
+    {
+      "id": "CP18",
+      "route_m": 18000,
+      "garage": null,
+      "free_vehicle": null,
+      "clue": "C05_NOTE",
+      "grant_id": "GRANT_CP18_V1",
+      "refill": true,
+      "free_parts": [
+        "P_M_SUSP_T1"
+      ]
+    },
+    {
+      "id": "CP24",
+      "route_m": 24000,
+      "garage": null,
+      "free_vehicle": null,
+      "clue": "C06_STAMP",
+      "grant_id": "GRANT_CP24_V1",
+      "refill": true,
+      "free_parts": [
+        "P_M_UTIL_T1"
+      ]
+    },
+    {
+      "id": "CP30",
+      "route_m": 30000,
+      "garage": "G03",
+      "free_vehicle": "V03",
+      "clue": "C07_COAT",
+      "grant_id": "GRANT_CP30_V1",
+      "refill": true,
+      "free_parts": []
+    },
+    {
+      "id": "CP36",
+      "route_m": 36000,
+      "garage": null,
+      "free_vehicle": null,
+      "clue": "C08_MANIFEST",
+      "grant_id": "GRANT_CP36_V1",
+      "refill": true,
+      "free_parts": [
+        "P_W_TYRE_T1"
+      ]
+    },
+    {
+      "id": "CP42",
+      "route_m": 42000,
+      "garage": null,
+      "free_vehicle": null,
+      "clue": "C09_RECORDING",
+      "grant_id": "GRANT_CP42_V1",
+      "refill": true,
+      "free_parts": []
+    },
+    {
+      "id": "CP48",
+      "route_m": 48000,
+      "garage": null,
+      "free_vehicle": null,
+      "clue": "C10_TESTIMONY",
+      "grant_id": "GRANT_CP48_V1",
+      "refill": true,
+      "free_parts": []
+    }
+  ],
+  "stat_evaluation": {
+    "order": [
+      "base values",
+      "additive modifiers",
+      "multiplicative modifiers",
+      "clamps"
+    ],
+    "stability": "Design scalar controlling the bounded assist tuning, not a named Chaos API. Map during M03; clamp assist scalar to 0..1.",
+    "wheel_grip": "Apply per wheel; UI reports axle/full-car summary. Matching radius required.",
+    "note": "Displayed comparisons must include mass and handling tradeoffs, not only positive modifiers."
+  }
+}

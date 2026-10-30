@@ -1,0 +1,93 @@
+asset_id,category,name,milestone,owner,status,source_reference,licence_or_provenance,technical_contract
+V01_CHASSIS,Vehicle,Kestrel stock body and interior,M14,Codex,Planned,,To record,Four wheel rig; verified scale; separate required moving parts; see document 04
+V01_WHEEL_STOCK,Vehicle,Kestrel stock wheel,M14,Codex,Planned,,To record,Hub-centre pivot; compatible family radius; reuse four instances
+P_K_TYRE_T1,Part,Kestrel tyre upgrade,M14,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_K_ENGINE_T1,Part,Kestrel engine upgrade,M14,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_K_FUEL_T1,Part,Kestrel fuel upgrade,M14,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_K_RAM_T1,Part,Kestrel ram upgrade,M14,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_K_SUSP_T1,Part,Kestrel susp upgrade,M14,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_K_UTIL_T1,Part,Kestrel util upgrade,M14,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+V02_CHASSIS,Vehicle,Mule stock body and interior,M17,Codex,Planned,,To record,Four wheel rig; verified scale; separate required moving parts; see document 04
+V02_WHEEL_STOCK,Vehicle,Mule stock wheel,M17,Codex,Planned,,To record,Hub-centre pivot; compatible family radius; reuse four instances
+P_M_TYRE_T1,Part,Mule tyre upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_M_ENGINE_T1,Part,Mule engine upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_M_FUEL_T1,Part,Mule fuel upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_M_RAM_T1,Part,Mule ram upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_M_SUSP_T1,Part,Mule susp upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_M_UTIL_T1,Part,Mule util upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+V03_CHASSIS,Vehicle,Warden stock body and interior,M17,Codex,Planned,,To record,Four wheel rig; verified scale; separate required moving parts; see document 04
+V03_WHEEL_STOCK,Vehicle,Warden stock wheel,M17,Codex,Planned,,To record,Hub-centre pivot; compatible family radius; reuse four instances
+P_W_TYRE_T1,Part,Warden tyre upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_W_ENGINE_T1,Part,Warden engine upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_W_FUEL_T1,Part,Warden fuel upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_W_RAM_T1,Part,Warden ram upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_W_SUSP_T1,Part,Warden susp upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+P_W_UTIL_T1,Part,Warden util upgrade,M17,Codex,Planned,,To record,Match part ID and socket contract; visible functional change
+G01_WALLKIT,Garage,Mile Zero walls doors windows roof,M14,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G01_FLOORKIT,Garage,Mile Zero floor and service pad,M14,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G01_HERO,Garage,Mile Zero distinct story props,M14,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G01_LIGHT,Garage,Mile Zero practical lighting set,M14,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G01_FURN,Garage,Mile Zero living furniture,M14,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G01_EXTERIOR,Garage,Mile Zero fence and forecourt,M14,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G02_WALLKIT,Garage,Redline walls doors windows roof,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G02_FLOORKIT,Garage,Redline floor and service pad,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G02_HERO,Garage,Redline distinct story props,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G02_LIGHT,Garage,Redline practical lighting set,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G02_FURN,Garage,Redline living furniture,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G02_EXTERIOR,Garage,Redline fence and forecourt,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G03_WALLKIT,Garage,Stillwater walls doors windows roof,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G03_FLOORKIT,Garage,Stillwater floor and service pad,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G03_HERO,Garage,Stillwater distinct story props,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G03_LIGHT,Garage,Stillwater practical lighting set,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G03_FURN,Garage,Stillwater living furniture,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+G03_EXTERIOR,Garage,Stillwater fence and forecourt,M18,Codex,Planned,,To record,Modular 0.5 m grid; exclusion volumes and dimensions in document 04
+PROP_01,Prop,workbench,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_02,Prop,hydraulic jack,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_03,Prop,wheel rack,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_04,Prop,toolbox,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_05,Prop,radio,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_06,Prop,route board,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_07,Prop,fuel can,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_08,Prop,shelves,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_09,Prop,cot,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_10,Prop,chair,M14,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_11,Prop,rug,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_12,Prop,lamp,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_13,Prop,crate,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_14,Prop,locker,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_15,Prop,table,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_16,Prop,wall clock,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_17,Prop,books,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_18,Prop,curtain,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_19,Prop,planter,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+PROP_20,Prop,memorial shelf,M18,Codex,Planned,,To record,Shared material families; simple collision; placement metadata if decoratable
+ROAD_01,Road chunk,straight,M07 blockout then M14,Claude geometry; Codex art,Planned,,To record,Nominal 250 m; entry/exit transforms; reserved safe corridor
+ROAD_02,Road chunk,gentle left,M07 blockout then M14,Claude geometry; Codex art,Planned,,To record,Nominal 250 m; entry/exit transforms; reserved safe corridor
+ROAD_03,Road chunk,gentle right,M07 blockout then M14,Claude geometry; Codex art,Planned,,To record,Nominal 250 m; entry/exit transforms; reserved safe corridor
+ROAD_04,Road chunk,wreck choke,M07 blockout then M14,Claude geometry; Codex art,Planned,,To record,Nominal 250 m; entry/exit transforms; reserved safe corridor
+ROAD_05,Road chunk,fuel branch,M07 blockout then M14,Claude geometry; Codex art,Planned,,To record,Nominal 250 m; entry/exit transforms; reserved safe corridor
+ROAD_06,Road chunk,outpost approach,M07 blockout then M14,Claude geometry; Codex art,Planned,,To record,Nominal 250 m; entry/exit transforms; reserved safe corridor
+ROAD_07,Road chunk,rise,M07 blockout then M14,Claude geometry; Codex art,Planned,,To record,Nominal 250 m; entry/exit transforms; reserved safe corridor
+ROAD_08,Road chunk,underpass,M07 blockout then M14,Claude geometry; Codex art,Planned,,To record,Nominal 250 m; entry/exit transforms; reserved safe corridor
+CHAR_ELI,Character,Eli arms and body,M14,Codex plus human art review,Planned,,To record,Hero MetaHuman optimisation optional; enemy LODs; original clothed design
+CHAR_MARA,Character,Mara hero portrait or final scene,M18,Codex plus human art review,Planned,,To record,Hero MetaHuman optimisation optional; enemy LODs; original clothed design
+Z_DRIFTER,Character,Drifter,M14,Codex plus human art review,Planned,,To record,Hero MetaHuman optimisation optional; enemy LODs; original clothed design
+Z_CLINGER,Character,Clinger,M14,Codex plus human art review,Planned,,To record,Hero MetaHuman optimisation optional; enemy LODs; original clothed design
+Z_BRUTE,Character,Brute,M18,Codex plus human art review,Planned,,To record,Hero MetaHuman optimisation optional; enemy LODs; original clothed design
+UI_01,UI,driving HUD,M12,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+UI_02,UI,workbench,M12,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+UI_03,UI,part comparison,M12,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+UI_04,UI,route board,M12,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+UI_05,UI,decoration,M12,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+UI_06,UI,journal,M12,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+UI_07,UI,settings,M12,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+UI_08,UI,run result,M12,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+UI_09,UI,cosmetic preview,M21 optional,Claude widgets; Codex visuals,Planned,,To record,Editable text; all interaction states; controller focus; document 05
+AUDIO_01,Audio,engine layers for three cars,M14 then M18 variants,Human audio direction with agent integration,Planned,,To record,Original or licensed; loudness consistency; concurrency caps; subtitles for speech
+AUDIO_02,Audio,tyre and surface layers,M14 then M18 variants,Human audio direction with agent integration,Planned,,To record,Original or licensed; loudness consistency; concurrency caps; subtitles for speech
+AUDIO_03,Audio,impact set,M14 then M18 variants,Human audio direction with agent integration,Planned,,To record,Original or licensed; loudness consistency; concurrency caps; subtitles for speech
+AUDIO_04,Audio,clinger warnings,M14 then M18 variants,Human audio direction with agent integration,Planned,,To record,Original or licensed; loudness consistency; concurrency caps; subtitles for speech
+AUDIO_05,Audio,workshop tools,M14 then M18 variants,Human audio direction with agent integration,Planned,,To record,Original or licensed; loudness consistency; concurrency caps; subtitles for speech
+AUDIO_06,Audio,garage ambience,M14 then M18 variants,Human audio direction with agent integration,Planned,,To record,Original or licensed; loudness consistency; concurrency caps; subtitles for speech
+AUDIO_07,Audio,radio evidence,M14 then M18 variants,Human audio direction with agent integration,Planned,,To record,Original or licensed; loudness consistency; concurrency caps; subtitles for speech
+AUDIO_08,Audio,sparse score,M14 then M18 variants,Human audio direction with agent integration,Planned,,To record,Original or licensed; loudness consistency; concurrency caps; subtitles for speech

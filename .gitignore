@@ -1,0 +1,41 @@
+# Unreal generated
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+Plugins/**/Binaries/
+Plugins/**/Intermediate/
+.vs/
+.vscode/
+.idea/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.xcworkspace
+*.code-workspace
+
+# Packaged builds and local output
+Packaged/
+Archive/
+*.pdb
+
+# Local credentials and machine-specific config
+.env
+.env.*
+*.pem
+*.key
+.mcp.json
+Config/*User*.ini
+Docs/LastSignal/local/
+
+# Blender autosaves
+*.blend1
+*.blend2
+
+# OS
+.DS_Store
+Thumbs.db
