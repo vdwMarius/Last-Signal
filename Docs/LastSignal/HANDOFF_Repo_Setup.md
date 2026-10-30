@@ -4,7 +4,7 @@ Date: 30 October 2026 | From: cloud Claude session (Linux, no Unreal) | To: Clau
 
 ## Where things stand
 
-- Repo: https://github.com/vdwMarius/last-signal---ue5-vehicle-survival-game (branch `main`).
+- Repo: https://github.com/vdwMarius/Last-Signal (branch `main`).
 - The repo contains the full design pack (`Docs/LastSignal/`), root agent files (`CLAUDE.md`, `AGENTS.md`, `PROJECT_STATE.md`), Git + LFS rules and a **text-only, never-compiled** UE C++ scaffold.
 - No `.uasset`/`.umap` files exist yet. No test map, no packaged build, no MCP connection.
 - Current task: **M00 Preflight** (`Docs/LastSignal/tasks/M00_Preflight.md`). Nothing in M00 has been done or verified.
