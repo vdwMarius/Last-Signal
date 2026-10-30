@@ -1,7 +1,7 @@
 # Current project state
 
 Current task: M00
-Last completed task: None (repository prep done; M00 not started)
+Last completed task: None (repository prep done; M00 not started — see Docs/LastSignal/HANDOFF_Repo_Setup.md)
 Playable build: None
 Engine patch / compiler / Blender / exporter: To inspect in M00
 Current branch and commit: main — record after first commit on the dev PC
